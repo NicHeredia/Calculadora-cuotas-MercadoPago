@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+body{
+    background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+}
+
+.contenedor-logo{
+   width: 100%;
+   height: 250px;
+}
+
+.logo{
+    width: 100%;
+}
+
+.tarjeta{
+    text-align: center;
+    padding-top: 15px;
+    width: 90%;
+    height: 600px;
+    min-height: 300px;
+    margin: 30px auto;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+#monto{
+    width: 75%;
+    text-align: center;
+    margin: 10px auto;
+}
+
+
+.cardCuotas{
+    width: 90%;
+    height: 80px;
+    margin: 20px auto;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    align-items: center;
+    display: flex;
+}
+
+.pill{
+    margin-left: 15px;
+    font-size: 16px;
+}
+
