@@ -56,3 +56,18 @@ display: flex;
 flex-direction: column;
 
 }
+
+
+@media  (min-width : 600px) {
+    .logo{
+        height: 200px;
+    }
+
+    .tarjeta{
+        height: 600px;
+    }
+
+    body{
+        height: 900px;
+    }
+}
