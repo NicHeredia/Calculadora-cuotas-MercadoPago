@@ -3,11 +3,12 @@ const btnCalcular = document.querySelector("#btn-calcular");
 const btnBorrar = document.querySelector("#btn-borrar");
 const resultadoCuotas = document.querySelector("#resultadoCuotas");
 
-
-const cuotas3 = 1.161576;
-const cuotas6 = 1.2430008;
-const cuotas12 = 1.423082;
-const cuotas18 = 1.743072;
+const debito = 1.06735
+const naranjaX = 11;
+const cuotas3 = 1.2311;
+const cuotas6 = 1.35722;
+const cuotas12 = 1.651802;
+const cuotas18 = 101.7;
 
 btnBorrar.addEventListener("click", () =>{
     monto.value = "";
@@ -19,13 +20,30 @@ btnCalcular.addEventListener("click", () =>{
         console.log("no ingreso un monto");
     } else {
 
+        const debitoFinal = Math.round(monto.value * debito);
         const monto3cuotas = Math.round(monto.value * cuotas3);
         const monto6cuotas = Math.round(monto.value * cuotas6); 
         const monto12cuotas = Math.round(monto.value * cuotas12);
-    const monto18cuotas = Math.round(monto.value * cuotas18);
+        const monto18cuotas = Math.round(((monto.value * cuotas18) / 100)) + Number(monto.value);
+        const naranjaXFinal = Math.round(((monto.value * naranjaX) / 100)) + Number(monto.value);
+
     
     
     resultadoCuotas.innerHTML = `<div class="cardCuotas">
+    <div class="cardCuota-numero">
+        <span class="badge bg-primary rounded-pill pill">D</span>
+        </div>
+        <div class="cardCuota-Final">
+        <span>Precio Debito</span>
+        <span>$${debitoFinal.toLocaleString("de-DE")}</span>
+    </div>
+    <div class="cardCuota-cuota">
+        <span>NaranjaX</span>
+        <span>$${Math.round(naranjaXFinal).toLocaleString("de-DE")}</span>
+        </div>
+        </div>
+
+        <div class="cardCuotas">
     <div class="cardCuota-numero">
         <span class="badge bg-primary rounded-pill pill">3</span>
         </div>
