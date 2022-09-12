@@ -10,12 +10,13 @@ const cuotas6 = 1.35722;
 const cuotas12 = 1.651802;
 const cuotas18 = 101.7;
 
-btnBorrar.addEventListener("click", () =>{
+btnBorrar.addEventListener("click", (e) =>{
+    e.preventDefault();
     monto.value = "";
 })
 
-btnCalcular.addEventListener("click", () =>{
-
+btnCalcular.addEventListener("click", (e) =>{
+    e.preventDefault();
     if (monto.value == "") {
         console.log("no ingreso un monto");
     } else {
