@@ -5,10 +5,10 @@ const resultadoCuotas = document.querySelector("#resultadoCuotas");
 
 const debito = 1.06735
 const naranjaX = 11;
-const cuotas3 = 1.2311;
-const cuotas6 = 1.35722;
-const cuotas12 = 1.651802;
-const cuotas18 = 101.7;
+const cuotas3 = 1.240696;
+const cuotas6 = 1.37817;
+const cuotas12 = 1.703288;
+const cuotas18 = 111.5;
 
 btnBorrar.addEventListener("click", (e) =>{
     e.preventDefault();
