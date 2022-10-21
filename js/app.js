@@ -3,12 +3,12 @@ const btnCalcular = document.querySelector("#btn-calcular");
 const btnBorrar = document.querySelector("#btn-borrar");
 const resultadoCuotas = document.querySelector("#resultadoCuotas");
 
-const debito = 1.06735
+const debito = 1.03961
 const naranjaX = 11;
-const cuotas3 = 1.240696;
-const cuotas6 = 1.37817;
-const cuotas12 = 1.703288;
-const cuotas18 = 111.5;
+const cuotas3 = 1.203368;
+const cuotas6 = 1.332268;
+const cuotas12 = 1.63372;
+const cuotas18 = 101;
 
 btnBorrar.addEventListener("click", (e) =>{
     e.preventDefault();
