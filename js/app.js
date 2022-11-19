@@ -4,7 +4,7 @@ const btnBorrar = document.querySelector("#btn-borrar");
 const resultadoCuotas = document.querySelector("#resultadoCuotas");
 
 const debito = 1.06735
-const naranjaX = 11;
+const naranjaX = 1.396256;
 const cuotas3 = 1.240696;
 const cuotas6 = 1.37817;
 const cuotas12 = 1.703288;
@@ -13,6 +13,7 @@ const cuotas18 = 111.5;
 btnBorrar.addEventListener("click", (e) =>{
     e.preventDefault();
     monto.value = "";
+    resultadoCuotas.innerHTML = ""
 })
 
 btnCalcular.addEventListener("click", (e) =>{
@@ -26,7 +27,7 @@ btnCalcular.addEventListener("click", (e) =>{
         const monto6cuotas = Math.round(monto.value * cuotas6); 
         const monto12cuotas = Math.round(monto.value * cuotas12);
         const monto18cuotas = Math.round(((monto.value * cuotas18) / 100)) + Number(monto.value);
-        const naranjaXFinal = Math.round(((monto.value * naranjaX) / 100)) + Number(monto.value);
+        const naranjaXFinal = Math.round(monto.value * naranjaX);
 
     
     
@@ -35,11 +36,11 @@ btnCalcular.addEventListener("click", (e) =>{
         <span class="badge bg-primary rounded-pill pill">D</span>
         </div>
         <div class="cardCuota-Final">
-        <span>Precio Debito</span>
+        <span>Debito</span>
         <span>$${debitoFinal.toLocaleString("de-DE")}</span>
     </div>
     <div class="cardCuota-cuota">
-        <span>NaranjaX</span>
+        <span>Naranja Plan Z</span>
         <span>$${Math.round(naranjaXFinal).toLocaleString("de-DE")}</span>
         </div>
         </div>
