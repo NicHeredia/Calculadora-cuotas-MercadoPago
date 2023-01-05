@@ -3,12 +3,14 @@ const btnCalcular = document.querySelector("#btn-calcular");
 const btnBorrar = document.querySelector("#btn-borrar");
 const resultadoCuotas = document.querySelector("#resultadoCuotas");
 
-const debito = 1.06735
-const naranjaX = 1.396256;
-const cuotas3 = 1.240696;
-const cuotas6 = 1.37817;
-const cuotas12 = 1.703288;
-const cuotas18 = 111.5;
+const tasas = {
+    debito : 1.07009,
+    naranja : 1.115448,
+    cuotas3 : 1.242546,
+    cuotas6 : 1.380454,
+    cuotas12 : 1.706776,
+    cuotas18 : 112
+};
 
 btnBorrar.addEventListener("click", (e) =>{
     e.preventDefault();
@@ -19,90 +21,60 @@ btnBorrar.addEventListener("click", (e) =>{
 btnCalcular.addEventListener("click", (e) =>{
     e.preventDefault();
     if (monto.value == "") {
-        console.log("no ingreso un monto");
+        console.log("no ingreso un monto o ya calculo algo");
     } else {
 
-        const debitoFinal = Math.round(monto.value * debito);
-        const monto3cuotas = Math.round(monto.value * cuotas3);
-        const monto6cuotas = Math.round(monto.value * cuotas6); 
-        const monto12cuotas = Math.round(monto.value * cuotas12);
-        const monto18cuotas = Math.round(((monto.value * cuotas18) / 100)) + Number(monto.value);
-        const naranjaXFinal = Math.round(monto.value * naranjaX);
+        const montoFinal ={
+            debito : Math.round(monto.value * tasas.debito),
+            cuotas3 : Math.round(monto.value * tasas.cuotas3),
+            cuotas6 : Math.round(monto.value * tasas.cuotas6),
+            cuotas12 : Math.round(monto.value * tasas.cuotas12),
+            cuotas18 : Math.round(((monto.value * tasas.cuotas18) / 100)) + Number(monto.value),
+            naranja : Math.round(monto.value * tasas.naranja)
+        }
 
-    
-    
-    resultadoCuotas.innerHTML = `<div class="cardCuotas">
-    <div class="cardCuota-numero">
-        <span class="badge bg-primary rounded-pill pill">D</span>
-        </div>
-        <div class="cardCuota-Final">
-        <span>Debito</span>
-        <span>$${debitoFinal.toLocaleString("de-DE")}</span>
-    </div>
-    <div class="cardCuota-cuota">
-        <span>Naranja Plan Z</span>
-        <span>$${Math.round(naranjaXFinal).toLocaleString("de-DE")}</span>
-        </div>
-        </div>
 
-        <div class="cardCuotas">
-    <div class="cardCuota-numero">
-        <span class="badge bg-primary rounded-pill pill">3</span>
-        </div>
-        <div class="cardCuota-Final">
-        <span>Precio Final</span>
-        <span>$${monto3cuotas.toLocaleString("de-DE")}</span>
-    </div>
-    <div class="cardCuota-cuota">
-        <span>3 Cuotas de</span>
-        <span>$${Math.round(monto3cuotas / 3).toLocaleString("de-DE")}</span>
-        </div>
-        </div>
-        
-        
-        <div class="cardCuotas">
+    const crearTarjetaCuotas = (monto,cuota) => {
+        let plantilla = `<div class="cardCuotas">
         <div class="cardCuota-numero">
-        <span class="badge bg-primary rounded-pill pill">6</span>
-    </div>
-    <div class="cardCuota-Final">
-    <span>Precio Final</span>
-    <span>$${monto6cuotas.toLocaleString("de-DE")}</span>
-    </div>
-    <div class="cardCuota-cuota">
-    <span>6 Cuotas de</span>
-    <span>$${Math.round(monto6cuotas / 6).toLocaleString("de-DE")}</span>
-    </div>
-    </div>
-    
-    
-    <div class="cardCuotas">
-    <div class="cardCuota-numero">
-    <span class="badge bg-primary rounded-pill pill">12</span>
-    </div>
-    <div class="cardCuota-Final">
-    <span>Precio Final</span>
-    <span>$${monto12cuotas.toLocaleString("de-DE")}</span>
-    </div>
-    <div class="cardCuota-cuota">
-    <span>12 Cuotas de</span>
-    <span>$${Math.round(monto12cuotas / 12).toLocaleString("de-DE")}</span>
-    </div>
-    </div>
-    
-    
-    <div class="cardCuotas">
-    <div class="cardCuota-numero">
-    <span class="badge bg-primary rounded-pill pill">18</span>
-    </div>
-    <div class="cardCuota-Final">
-    <span>Precio Final</span>
-        <span>$${monto18cuotas.toLocaleString("de-DE")}</span>
+            <span class="badge bg-primary rounded-pill pill">${cuota}</span>
+            </div>
+            <div class="cardCuota-Final">
+            <span>Precio Final</span>
+            <span>$${monto.toLocaleString("de-DE")}</span>
         </div>
         <div class="cardCuota-cuota">
-        <span>18 Cuotas de</span>
-        <span>$${Math.round(monto18cuotas / 18).toLocaleString("de-DE")}</span>
-        </div>
+            <span>${cuota} Cuotas de </span>
+            <span>$${Math.round(monto / cuota).toLocaleString("de-DE")}</span>
+            </div>
         </div>`
+        return plantilla 
+    }
+
+    const crearTarjetaDebito = (montoDebito,montoNaranja) => {
+        let plantilla = `<div class="cardCuotas">
+        <div class="cardCuota-numero">
+            <span class="badge bg-primary rounded-pill pill">D</span>
+            </div>
+            <div class="cardCuota-Final">
+            <span>Precio Debito</span>
+            <span>$${montoDebito.toLocaleString("de-DE")}</span>
+        </div>
+        <div class="cardCuota-cuota">
+            <span>Precio Naranja</span>
+            <span>$${montoNaranja.toLocaleString("de-DE")}</span>
+            </div>
+            </div>` 
+            return plantilla
+    }
+
+    resultadoCuotas.innerHTML = "";
+    resultadoCuotas.innerHTML += crearTarjetaDebito(montoFinal.debito, montoFinal.naranja);
+    resultadoCuotas.innerHTML += crearTarjetaCuotas(montoFinal.cuotas3, 3);
+    resultadoCuotas.innerHTML += crearTarjetaCuotas(montoFinal.cuotas6, 6);
+    resultadoCuotas.innerHTML += crearTarjetaCuotas(montoFinal.cuotas12, 12);
+    resultadoCuotas.innerHTML += crearTarjetaCuotas(montoFinal.cuotas18, 18);
+    
     }
     });
     
