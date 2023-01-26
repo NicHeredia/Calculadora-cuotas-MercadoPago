@@ -6,7 +6,7 @@
 }
 
 body{
-    background-image: url(../assets/background.svg);
+    background-image: url(/assets/background-min.svg);
 }
 
 .contenedor-logo{
