@@ -6,7 +6,7 @@
 }
 
 body{
-    background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+    background-image: url(/assets/background.svg);
 }
 
 .contenedor-logo{
@@ -27,8 +27,12 @@ body{
     padding-bottom: 10px;
     margin: -5px auto;
     margin-bottom: 40px;
+    background: rgba( 255, 255, 255, 0.4 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 5px );
+    -webkit-backdrop-filter: blur( 5px );
     border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
 #monto{
@@ -42,10 +46,15 @@ body{
     width: 90%;
     height: 80px;
     margin: 20px auto;
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
     align-items: center;
     display: flex;
     justify-content: space-evenly;
+    background: rgba( 255, 255, 255, 0.4 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 5px );
+    -webkit-backdrop-filter: blur( 5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
 .pill{
@@ -65,7 +74,18 @@ flex-direction: column;
         height: 200px;
     }
 
+    #monto{
+        width: 40%;
+        background: rgba( 255, 255, 255, 0.4 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 5px );
+-webkit-backdrop-filter: blur( 5px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+    }
+
     .tarjeta{
+        width: 75%;
         height: auto;
         padding-bottom: 10px;
     }
