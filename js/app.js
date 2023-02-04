@@ -13,9 +13,19 @@ const tasas = {
 };
 
 btnBorrar.addEventListener("click", (e) =>{
+    let borrarDelay
+    resultadoCuotas.classList.add("fade-out");
     e.preventDefault();
     monto.value = "";
-    resultadoCuotas.innerHTML = ""
+    // resultadoCuotas.innerHTML = ""
+    borrarDelay = setTimeout(delay, 1000);
+    monto.focus();
+    
+    function delay() {
+        resultadoCuotas.innerHTML = ""
+        resultadoCuotas.classList.remove("fade-out")
+    }
+    
 })
 
 btnCalcular.addEventListener("click", (e) =>{
@@ -35,7 +45,7 @@ btnCalcular.addEventListener("click", (e) =>{
 
 
     const crearTarjetaCuotas = (monto,cuota) => {
-        let plantilla = `<div class="cardCuotas">
+        let plantilla = `<div class="cardCuotas fade-in">
         <div class="cardCuota-numero">
             <span class="badge bg-primary rounded-pill pill">${cuota}</span>
             </div>
@@ -52,7 +62,7 @@ btnCalcular.addEventListener("click", (e) =>{
     }
 
     const crearTarjetaDebito = (montoDebito,montoNaranja) => {
-        let plantilla = `<div class="cardCuotas">
+        let plantilla = `<div class="cardCuotas fade-in">
         <div class="cardCuota-numero">
             <span class="badge bg-primary rounded-pill pill">D</span>
             </div>
