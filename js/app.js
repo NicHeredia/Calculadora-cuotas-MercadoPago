@@ -3,14 +3,6 @@ const btnCalcular = document.querySelector("#btn-calcular");
 const btnBorrar = document.querySelector("#btn-borrar");
 const resultadoCuotas = document.querySelector("#resultadoCuotas");
 
-const tasas = {
-    debito : 1.07009,
-    naranja : 1.115448,
-    cuotas3 : 1.242546,
-    cuotas6 : 1.380454,
-    cuotas12 : 1.706776,
-    cuotas18 : 112
-};
 
 btnBorrar.addEventListener("click", (e) =>{
     let borrarDelay
@@ -34,13 +26,19 @@ btnCalcular.addEventListener("click", (e) =>{
         console.log("no ingreso un monto o ya calculo algo");
     } else {
 
-        const montoFinal ={
-            debito : Math.round(monto.value * tasas.debito),
-            cuotas3 : Math.round(monto.value * tasas.cuotas3),
-            cuotas6 : Math.round(monto.value * tasas.cuotas6),
-            cuotas12 : Math.round(monto.value * tasas.cuotas12),
-            cuotas18 : Math.round(((monto.value * tasas.cuotas18) / 100)) + Number(monto.value),
-            naranja : Math.round(monto.value * tasas.naranja)
+        const montoFinal_ahora = {
+            naranja : Math.round(monto.value * 1.115448),
+            cuotas3 : Math.round(monto.value *  1.242546),
+            cuotas6 : Math.round(monto.value * 1.380454),
+            cuotas12 : Math.round(monto.value * 1.706776),
+            cuotas18 : Math.round(((monto.value * 112) / 100)) + Number(monto.value),
+           
+        }
+
+        const montoFinal_naranja = {
+            debito : Math.round(monto.value * 1.07009),
+            naranja3 : Math.round(montoFinal_ahora.naranja * 1.2614),
+            naranja6 : Math.round(montoFinal_ahora.naranja * 1.4834)
         }
 
 
@@ -64,8 +62,8 @@ btnCalcular.addEventListener("click", (e) =>{
     const crearTarjetaDebito = (montoDebito,montoNaranja) => {
         let plantilla = `<div class="cardCuotas fade-in">
         <div class="cardCuota-numero">
-            <span class="badge bg-primary rounded-pill pill">D</span>
-            </div>
+        <span class="badge bg-primary rounded-pill pill">D</span>
+        </div>
             <div class="cardCuota-Final">
             <span>Precio Debito</span>
             <span>$${montoDebito.toLocaleString("de-DE")}</span>
@@ -78,12 +76,21 @@ btnCalcular.addEventListener("click", (e) =>{
             return plantilla
     }
 
+    const crearTitulo = (titulo) => {
+        return `<h2 class="tituloSeparador">${titulo}</h2>`
+    }
+
     resultadoCuotas.innerHTML = "";
-    resultadoCuotas.innerHTML += crearTarjetaDebito(montoFinal.debito, montoFinal.naranja);
-    resultadoCuotas.innerHTML += crearTarjetaCuotas(montoFinal.cuotas3, 3);
-    resultadoCuotas.innerHTML += crearTarjetaCuotas(montoFinal.cuotas6, 6);
-    resultadoCuotas.innerHTML += crearTarjetaCuotas(montoFinal.cuotas12, 12);
-    resultadoCuotas.innerHTML += crearTarjetaCuotas(montoFinal.cuotas18, 18);
+    resultadoCuotas.innerHTML += crearTitulo("Naranja")
+    resultadoCuotas.innerHTML += crearTarjetaDebito(montoFinal_naranja.debito, montoFinal_ahora.naranja);
+    resultadoCuotas.innerHTML += crearTarjetaCuotas(montoFinal_naranja.naranja3, 3);
+    resultadoCuotas.innerHTML += crearTarjetaCuotas(montoFinal_naranja.naranja6, 6);
+
+    resultadoCuotas.innerHTML += crearTitulo("Plan Ahora")
+    resultadoCuotas.innerHTML += crearTarjetaCuotas(montoFinal_ahora.cuotas3, 3);
+    resultadoCuotas.innerHTML += crearTarjetaCuotas(montoFinal_ahora.cuotas6, 6);
+    resultadoCuotas.innerHTML += crearTarjetaCuotas(montoFinal_ahora.cuotas12, 12);
+    resultadoCuotas.innerHTML += crearTarjetaCuotas(montoFinal_ahora.cuotas18, 18);
     
     }
     });

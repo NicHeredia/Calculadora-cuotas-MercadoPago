@@ -65,7 +65,14 @@ flex-direction: column;
 
 }
 
+.tituloSeparador {
+    margin-top: 20px;
+}
 
+hr{
+    width: 40%;
+    margin: auto;
+}
 
   
 
