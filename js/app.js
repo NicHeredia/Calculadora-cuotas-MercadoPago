@@ -9,7 +9,6 @@ btnBorrar.addEventListener("click", (e) =>{
     resultadoCuotas.classList.add("fade-out");
     e.preventDefault();
     monto.value = "";
-    // resultadoCuotas.innerHTML = ""
     borrarDelay = setTimeout(delay, 1000);
     monto.focus();
     
@@ -42,6 +41,8 @@ btnCalcular.addEventListener("click", (e) =>{
         }
 
 
+
+
     const crearTarjetaCuotas = (monto,cuota) => {
         let plantilla = `<div class="cardCuotas fade-in">
         <div class="cardCuota-numero">
@@ -65,11 +66,11 @@ btnCalcular.addEventListener("click", (e) =>{
         <span class="badge bg-primary rounded-pill pill">D</span>
         </div>
             <div class="cardCuota-Final">
-            <span>Precio Debito</span>
+            <span>Debito</span>
             <span>$${montoDebito.toLocaleString("de-DE")}</span>
         </div>
         <div class="cardCuota-cuota">
-            <span>Precio Naranja</span>
+            <span>1 Pago o Naranja </span>
             <span>$${montoNaranja.toLocaleString("de-DE")}</span>
             </div>
             </div>` 
