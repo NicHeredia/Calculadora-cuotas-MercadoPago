@@ -1,7 +1,8 @@
 const monto = document.querySelector("#monto");
-const btnCalcular = document.querySelector("#btn-calcular");
+const btnAhora = document.querySelector("#btn-ahora");
 const btnBorrar = document.querySelector("#btn-borrar");
 const resultadoCuotas = document.querySelector("#resultadoCuotas");
+
 
 
 btnBorrar.addEventListener("click", (e) =>{
@@ -19,7 +20,7 @@ btnBorrar.addEventListener("click", (e) =>{
     
 })
 
-btnCalcular.addEventListener("click", (e) =>{
+btnAhora.addEventListener("click", (e) =>{
     e.preventDefault();
     if (monto.value == "") {
         console.log("no ingreso un monto o ya calculo algo");
@@ -44,18 +45,11 @@ btnCalcular.addEventListener("click", (e) =>{
 
 
     const crearTarjetaCuotas = (monto,cuota) => {
-        let plantilla = `<div class="cardCuotas fade-in">
-        <div class="cardCuota-numero">
-            <span class="badge bg-primary rounded-pill pill">${cuota}</span>
-            </div>
-            <div class="cardCuota-Final">
-            <span>Precio Final</span>
-            <span>$${monto.toLocaleString("de-DE")}</span>
-        </div>
-        <div class="cardCuota-cuota">
-            <span>${cuota} Cuotas de </span>
-            <span>$${Math.round(monto / cuota).toLocaleString("de-DE")}</span>
-            </div>
+        let plantilla = `<div class="cardCuota fade-in">
+        <div class="cardCuota__numero">${cuota}</div>
+        <div class="cardCuota__contenedorMontos">
+          <p class="cardCuota__precioFinal">Precio Final $${monto.toLocaleString("de-DE")}</p>
+          <p class="cardCuota__precioCuotas">en ${cuota} cuotas de $${Math.round(monto / cuota).toLocaleString("de-DE")}</p>
         </div>`
         return plantilla 
     }
@@ -82,10 +76,10 @@ btnCalcular.addEventListener("click", (e) =>{
     }
 
     resultadoCuotas.innerHTML = "";
-    resultadoCuotas.innerHTML += crearTitulo("Naranja")
-    resultadoCuotas.innerHTML += crearTarjetaDebito(montoFinal_naranja.debito, montoFinal_ahora.naranja);
-    resultadoCuotas.innerHTML += crearTarjetaCuotas(montoFinal_naranja.naranja3, 3);
-    resultadoCuotas.innerHTML += crearTarjetaCuotas(montoFinal_naranja.naranja6, 6);
+    // resultadoCuotas.innerHTML += crearTitulo("Naranja")
+    // resultadoCuotas.innerHTML += crearTarjetaDebito(montoFinal_naranja.debito, montoFinal_ahora.naranja);
+    // resultadoCuotas.innerHTML += crearTarjetaCuotas(montoFinal_naranja.naranja3, 3);
+    // resultadoCuotas.innerHTML += crearTarjetaCuotas(montoFinal_naranja.naranja6, 6);
 
     resultadoCuotas.innerHTML += crearTitulo("Plan Ahora")
     resultadoCuotas.innerHTML += crearTarjetaCuotas(montoFinal_ahora.cuotas3, 3);
