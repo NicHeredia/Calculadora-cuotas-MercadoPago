@@ -49,12 +49,45 @@ body{
 
 .botonAhora{
     background-color: #004e98;
+    color: #fff;
 }
 
 .botonNaranja{
     background-color: #ff6b35;
     color: #fff;
 }
+
+.botonAhora:hover, .botonAhora:focus{
+    background-color: #004e98;
+    color: #fff;
+}
+
+.botonNaranja:hover, .botonNaranja:focus{
+    background-color: #ff6b35;
+    color: #fff;
+}
+
+.botonAhora:hover, .botonNaranja:hover {
+    background-position: right center;
+    background-size: 200% auto;
+    -webkit-animation: pulse 2s infinite;
+    animation: pulse512 1.5s infinite;
+}
+
+@keyframes pulse512 {
+ 0% {
+  box-shadow: 0 0 0 0 #05bada66;
+ }
+
+ 70% {
+  box-shadow: 0 0 0 10px rgb(218 103 68 / 0%);
+ }
+
+ 100% {
+  box-shadow: 0 0 0 0 rgb(218 103 68 / 0%);
+ }
+}
+
 
 /* Estilos de las cards creadas con JS */
 
@@ -75,7 +108,7 @@ body{
 .cardCuota__numero{
     font-size: 34px;
     font-weight: bold;
-    color: #0f4c5c;
+    color: #023e8a;
     text-align: center;
 }
 
@@ -87,15 +120,15 @@ body{
 .cardCuota__precioFinal{
     font-size: 16px;
      font-weight: bold;
-      color: #757575;
        margin: 0;
 }
 
 .cardCuota__precioCuotas{
     font-size: 15px;
-    color: #535151;
     margin: 0;
 }
+
+
 
 @media  (min-width : 600px) {
     body {
