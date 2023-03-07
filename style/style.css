@@ -1,8 +1,10 @@
-* {
+*{ 
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     list-style: none;
+
+
 }
 
 body{
@@ -71,9 +73,9 @@ body{
 }
 
 .cardCuota__numero{
-    font-size: 43px;
+    font-size: 34px;
     font-weight: bold;
-    color: #0C46A1;
+    color: #0f4c5c;
     text-align: center;
 }
 
@@ -94,9 +96,6 @@ body{
     color: #535151;
     margin: 0;
 }
-
-
-  
 
 @media  (min-width : 600px) {
     body {
