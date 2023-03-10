@@ -19,15 +19,27 @@ const montoFinal_naranja = {
 }
 
 //Funciones que se encargan de crear las tarjetas y los titulos
-const crearTarjetaCuotas = (montoFinal,cuota) => {
+const tarjetaCuotas = (montoFinal,cuota) => {
     let plantilla = `<div class="cardCuota fade-in">
     <div class="cardCuota__numero">${cuota}</div>
     <div class="cardCuota__contenedorMontos">
       <p class="cardCuota__precioFinal">Precio Final $${Math.round(monto.value * montoFinal).toLocaleString("de-DE")}</p>
-      <p class="cardCuota__precioCuotas">en ${cuota} cuotas de $${Math.round((monto.value * montoFinal) / cuota).toLocaleString("de-DE")}</p>
+      <p class="cardCuota__precioCuotas">${cuota} cuotas de $${Math.round((monto.value * montoFinal) / cuota).toLocaleString("de-DE")}</p>
     </div>`
     return plantilla 
 }
+
+const tarjetaDebitoYPlanZ = (montoFinal, cuota, nombre) => {
+    let plantilla = `<div class="cardCuota fade-in">
+    <div class="cardCuota__numero">${cuota}</div>
+    <div class="cardCuota__contenedorMontos">
+      <p class="cardCuota__precioFinal">Precio Final $${Math.round(monto.value * montoFinal).toLocaleString("de-DE")}</p>
+      <p class="cardCuota__precioCuotas">${nombre}</p>
+    </div>`
+    return plantilla 
+}
+
+
 
 const crearTitulo = (titulo) => {
     return `<h2 class="tituloSeparador">${titulo}</h2>`
@@ -41,14 +53,14 @@ form.addEventListener("click", (e) =>{
 
     
     if (monto.value == "") {
-        console.log("no ingreso un monto o ya calculo algo");
+        console.log("Ingrese un monto para comenzar");
     } else if (e.target.id === "btn-ahora"){
     resultadoCuotas.innerHTML = "";
     resultadoCuotas.innerHTML += crearTitulo("Plan Ahora")
-    resultadoCuotas.innerHTML += crearTarjetaCuotas(montoFinal_ahora.cuotas3, 3);
-    resultadoCuotas.innerHTML += crearTarjetaCuotas(montoFinal_ahora.cuotas6, 6);
-    resultadoCuotas.innerHTML += crearTarjetaCuotas(montoFinal_ahora.cuotas12, 12);
-    resultadoCuotas.innerHTML += crearTarjetaCuotas(montoFinal_ahora.cuotas18, 18);
+    resultadoCuotas.innerHTML += tarjetaCuotas(montoFinal_ahora.cuotas3, 3);
+    resultadoCuotas.innerHTML += tarjetaCuotas(montoFinal_ahora.cuotas6, 6);
+    resultadoCuotas.innerHTML += tarjetaCuotas(montoFinal_ahora.cuotas12, 12);
+    resultadoCuotas.innerHTML += tarjetaCuotas(montoFinal_ahora.cuotas18, 18);
     
     } else if (e.target.id === "btn-borrar"){
         let borrarDelay
@@ -66,9 +78,10 @@ form.addEventListener("click", (e) =>{
     } else if (e.target.id === "btn-naranja") {
         resultadoCuotas.innerHTML = "";
         resultadoCuotas.innerHTML += crearTitulo("Naranja Z")
-        resultadoCuotas.innerHTML += crearTarjetaCuotas(montoFinal_ahora.naranja, "Z");
-        resultadoCuotas.innerHTML += crearTarjetaCuotas(montoFinal_naranja.naranja3, 3);
-        resultadoCuotas.innerHTML += crearTarjetaCuotas(montoFinal_naranja.naranja6, 6);
+        resultadoCuotas.innerHTML += tarjetaDebitoYPlanZ(montoFinal_naranja.debito, "D", "Precio Debito Final");
+        resultadoCuotas.innerHTML += tarjetaDebitoYPlanZ(montoFinal_ahora.naranja, "Z", "Este monto en Point");
+        resultadoCuotas.innerHTML += tarjetaCuotas(montoFinal_naranja.naranja3, 3);
+        resultadoCuotas.innerHTML += tarjetaCuotas(montoFinal_naranja.naranja6, 6);
         
     }
     });
