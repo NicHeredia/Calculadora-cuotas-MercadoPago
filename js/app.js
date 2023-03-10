@@ -78,7 +78,7 @@ form.addEventListener("click", (e) =>{
     } else if (e.target.id === "btn-naranja") {
         resultadoCuotas.innerHTML = "";
         resultadoCuotas.innerHTML += crearTitulo("Naranja Z")
-        resultadoCuotas.innerHTML += tarjetaDebitoYPlanZ(montoFinal_naranja.debito, "D", "Precio Debito Final");
+        resultadoCuotas.innerHTML += tarjetaDebitoYPlanZ(montoFinal_naranja.debito, "D", "Precio final con Debito");
         resultadoCuotas.innerHTML += tarjetaDebitoYPlanZ(montoFinal_ahora.naranja, "Z", "Este monto en Point");
         resultadoCuotas.innerHTML += tarjetaCuotas(montoFinal_naranja.naranja3, 3);
         resultadoCuotas.innerHTML += tarjetaCuotas(montoFinal_naranja.naranja6, 6);
