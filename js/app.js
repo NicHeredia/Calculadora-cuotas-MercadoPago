@@ -55,7 +55,7 @@ form.addEventListener("click", (e) =>{
     } else if (e.target.id === "btn-ahora"){
     resultadoCuotas.innerHTML = "";
     resultadoCuotas.innerHTML += crearTitulo("Plan Ahora")
-    resultadoCuotas.innerHTML += tarjetaDebito(montoFinal_ahora.debito, "D", "Precio final Debito")
+    resultadoCuotas.innerHTML += tarjetaDebito(montoFinal_ahora.debito, "D", "Precio final con Debito")
     resultadoCuotas.innerHTML += tarjetaCuotas(montoFinal_ahora.cuotas3, 3);
     resultadoCuotas.innerHTML += tarjetaCuotas(montoFinal_ahora.cuotas6, 6);
     resultadoCuotas.innerHTML += tarjetaCuotas(montoFinal_ahora.cuotas12, 12);
