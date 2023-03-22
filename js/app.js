@@ -6,6 +6,7 @@ const form = document.querySelector("#form")
 
 //objeto que contiene los tasas que se cobran dependiendo cada tarjeta y cuota deseada    
 const montoFinal_ahora = {
+    cuotas1 : 1.115448,
     debito : 1.07009,
     cuotas3 : 1.242546,
     cuotas6 : 1.380454,
@@ -55,6 +56,7 @@ form.addEventListener("click", (e) =>{
     } else if (e.target.id === "btn-ahora"){
     resultadoCuotas.innerHTML = "";
     resultadoCuotas.innerHTML += crearTitulo("Plan Ahora")
+    resultadoCuotas.innerHTML += tarjetaDebito(montoFinal_ahora.cuotas1, "1", "Precio final 1 Cuota")
     resultadoCuotas.innerHTML += tarjetaDebito(montoFinal_ahora.debito, "D", "Precio final con Debito")
     resultadoCuotas.innerHTML += tarjetaCuotas(montoFinal_ahora.cuotas3, 3);
     resultadoCuotas.innerHTML += tarjetaCuotas(montoFinal_ahora.cuotas6, 6);
