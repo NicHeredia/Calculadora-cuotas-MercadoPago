@@ -13,7 +13,7 @@ const montoFinal_ahora = {
     cuotas12 : 1.735812
 }
 const montoFinal_naranja = {
-    naranja3 : 1.398602,
+    naranja3 : 1.40568,
     naranja6 : 1.683502
 }
 
