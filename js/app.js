@@ -8,9 +8,9 @@ const form = document.querySelector("#form")
 const montoFinal_ahora = {
     cuotas1 : 1.115448,
     debito : 1.07009,
-    cuotas3 : 1.247818,
-    cuotas6 : 1.391982,
-    cuotas12 : 1.735812
+    cuotas3 : 1.257704,
+    cuotas6 : 1.414426,
+    cuotas12 : 1.795654
 }
 const montoFinal_naranja = {
     naranja3 : 1.40568,
