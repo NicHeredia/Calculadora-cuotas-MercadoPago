@@ -4,17 +4,17 @@ const form = document.querySelector("#form")
 
 
 
-//objeto que contiene los tasas que se cobran dependiendo cada tarjeta y cuota deseada    
+//objeto que contiene las tasas que se cobran dependiendo cada tarjeta y cuota deseada    
 const montoFinal_ahora = {
     cuotas1 : 1.115448,
     debito : 1.07009,
-    cuotas3 : 1.257704,
-    cuotas6 : 1.414426,
-    cuotas12 : 1.795654
+    cuotas3 : 1.275998,
+    cuotas6 : 1.455818,
+    cuotas12 : 1.904034
 }
 const montoFinal_naranja = {
-    naranja3 : 1.40568,
-    naranja6 : 1.683502
+    naranja3 : 1.434928,
+    naranja6 : 1.773678
 }
 
 //Funciones que se encargan de crear las tarjetas y los titulos
