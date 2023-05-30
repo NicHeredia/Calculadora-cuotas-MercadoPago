@@ -13,8 +13,8 @@ const montoFinal_ahora = {
     cuotas12 : 1.904034
 }
 const montoFinal_naranja = {
-    naranja3 : 1.434928,
-    naranja6 : 1.773678
+    naranja3 : 1.455182,
+    naranja6 : 1.824816
 }
 
 //Funciones que se encargan de crear las tarjetas y los titulos
