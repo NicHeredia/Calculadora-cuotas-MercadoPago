@@ -51,8 +51,8 @@ body{
 }
 
 #btn-borrar{
-    position: fixed;
-    right: 80px;
+    position: sticky;
+    right: 90px;
     font-weight: 400;
     font-size: 20px;
 }
@@ -174,7 +174,7 @@ body{
     }
 
     #btn-borrar{
-        right: 500px;
+        right: 510px;
     }
 
     #monto{
