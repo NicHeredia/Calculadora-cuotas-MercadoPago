@@ -1,3 +1,5 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+
 *{ 
     margin: 0;
     padding: 0;
@@ -40,10 +42,33 @@ body{
     border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
+.contenedor-input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: auto;
+}
+
+#btn-borrar{
+    position: fixed;
+    right: 50px;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+#btn-borrar:hover, #btn-borrar:active, #btn-borrar:focus, #btn-borrar:not(:hover) {
+    border: none;
+}
+
 #monto{
     width: 75%;
     text-align: center;
     margin: 10px auto;
+}
+
+.bi{
+    font-size: 20px;
 }
 
 
@@ -144,8 +169,16 @@ body{
         height: 200px;
     }
 
+    .contenedor-input{
+        width: 45%;
+    }
+
+    #btn-borrar{
+        right: 500px;
+    }
+
     #monto{
-        width: 40%;
+        width: 90%;
         background: rgba( 255, 255, 255, 0.4 );
         box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
         backdrop-filter: blur( 5px );

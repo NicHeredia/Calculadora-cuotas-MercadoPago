@@ -1,6 +1,6 @@
 const monto = document.querySelector("#monto");
 const resultadoCuotas = document.querySelector("#resultadoCuotas");
-const form = document.querySelector("#form")
+const form = document.querySelector("#form");
 
 
 
