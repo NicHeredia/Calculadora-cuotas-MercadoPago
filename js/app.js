@@ -17,12 +17,6 @@ const montoFinal_naranja = {
     naranja6 : 1.824816
 }
 
-const costos_compra = {
-    cuarenta: 1.694,
-    cincuenta: 1.815
-}
-
-
 //Funciones que se encargan de crear las tarjetas y los titulos
 const tarjetaCuotas = (montoFinal,cuota) => {
     let plantilla = `<div class="cardCuota fade-in">
@@ -83,16 +77,9 @@ form.addEventListener("click", (e) =>{
         }
     } else if (e.target.id === "btn-naranja") {
         resultadoCuotas.innerHTML = "";
-        resultadoCuotas.innerHTML += crearTitulo("Naranja");
+        resultadoCuotas.innerHTML += crearTitulo("Naranja")
         resultadoCuotas.innerHTML += tarjetaCuotas(montoFinal_naranja.naranja3, 3);
         resultadoCuotas.innerHTML += tarjetaCuotas(montoFinal_naranja.naranja6, 6);
         
-    } else if (e.target.id === "btn-costos") {
-        resultadoCuotas.innerHTML = "";
-        resultadoCuotas.innerHTML += crearTitulo("Precio final venta");
-        resultadoCuotas.innerHTML += tarjetaDebito(costos_compra.cuarenta, "40", "Precio final con el 40 %");
-        resultadoCuotas.innerHTML += tarjetaDebito(costos_compra.cincuenta, "50", "Precio final con el 50 %");
-
-
     }
     });
