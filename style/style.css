@@ -52,6 +52,7 @@ body{
 
 #btn-borrar{
     position: absolute;
+    display: none;
     right: 80px;
     font-weight: 400;
     font-size: 20px;

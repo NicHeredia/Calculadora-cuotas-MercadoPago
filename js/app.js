@@ -1,6 +1,7 @@
 const monto = document.querySelector("#monto");
 const resultadoCuotas = document.querySelector("#resultadoCuotas");
 const form = document.querySelector("#form");
+const btnBorrar = document.querySelector("#btn-borrar");
 
 
 
@@ -60,6 +61,7 @@ form.addEventListener("click", (e) =>{
     if (monto.value == "") {
         console.log("Ingrese un monto para comenzar");
     } else if (e.target.id === "btn-ahora"){
+        btnBorrar.style.display = "block";
     resultadoCuotas.innerHTML = "";
     resultadoCuotas.innerHTML += crearTitulo("Plan Ahora")
     resultadoCuotas.innerHTML += tarjetaDebito(montoFinal_ahora.cuotas1, "1", "Precio final 1 Cuota")
@@ -69,6 +71,7 @@ form.addEventListener("click", (e) =>{
     resultadoCuotas.innerHTML += tarjetaCuotas(montoFinal_ahora.cuotas12, 12);
     
     } else if (e.target.id === "btn-borrar"){
+        btnBorrar.style.display = "none";
         let borrarDelay
         resultadoCuotas.classList.add("fade-out");
         e.preventDefault();
@@ -82,12 +85,14 @@ form.addEventListener("click", (e) =>{
     
         }
     } else if (e.target.id === "btn-naranja") {
+        btnBorrar.style.display = "block";
         resultadoCuotas.innerHTML = "";
         resultadoCuotas.innerHTML += crearTitulo("Naranja");
         resultadoCuotas.innerHTML += tarjetaCuotas(montoFinal_naranja.naranja3, 3);
         resultadoCuotas.innerHTML += tarjetaCuotas(montoFinal_naranja.naranja6, 6);
         
     } else if (e.target.id === "btn-costos") {
+        btnBorrar.style.display = "block";
         resultadoCuotas.innerHTML = "";
         resultadoCuotas.innerHTML += crearTitulo("Precio final venta");
         resultadoCuotas.innerHTML += tarjetaDebito(costos_compra.cuarenta, "40", "Precio final con el 40 %");
