@@ -5,8 +5,12 @@
     padding: 0;
     box-sizing: border-box;
     list-style: none;
+}
 
-
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
 }
 
 body{
@@ -47,8 +51,8 @@ body{
 }
 
 #btn-borrar{
-    position: sticky;
-    right: 90px;
+    position: absolute;
+    right: 80px;
     font-weight: 400;
     font-size: 20px;
 }
