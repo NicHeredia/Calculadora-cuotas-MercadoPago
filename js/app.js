@@ -8,14 +8,14 @@ const btnBorrar = document.querySelector("#btn-borrar");
 //objeto que contiene las tasas que se cobran dependiendo cada tarjeta y cuota deseada    
 const montoFinal_ahora = {
     cuotas1 : 1.123092,
-    debito : 1.07009,
+    debito : 1.070664,
     cuotas3 : 1.310788,
     cuotas6 : 1.525786,
     cuotas12 : 2.084204
 }
 const montoFinal_naranja = {
-    naranja3 : 1.514004,
-    naranja6 : 1.949696
+    naranja3 : 1.567152,
+    naranja6 : 2.036244
 }
 
 const costos_compra = {
