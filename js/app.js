@@ -9,9 +9,9 @@ const btnBorrar = document.querySelector("#btn-borrar");
 const montoFinal_ahora = {
     cuotas1 : 1.123092,
     debito : 1.070664,
-    cuotas3 : 1.310788,
-    cuotas6 : 1.525786,
-    cuotas12 : 2.084204
+    cuotas3 : 1.336364,
+    cuotas6 : 1.585038,
+    cuotas12 : 2.25581
 }
 const montoFinal_naranja = {
     naranja3 : 1.567152,
