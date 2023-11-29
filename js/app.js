@@ -111,8 +111,8 @@ form.addEventListener("click", (e) =>{
         btnBorrar.style.display = "block";
         resultadoCuotas.innerHTML = "";
         resultadoCuotas.innerHTML += crearTitulo("Precio final venta");
-        resultadoCuotas.innerHTML += tarjetaDebito(costos_compra.cuarenta, "40", "Precio final con el 40 %");
-        resultadoCuotas.innerHTML += tarjetaDebito(costos_compra.cincuenta, "50", "Precio final con el 50 %");
+        resultadoCuotas.innerHTML += tarjetaDebito(costos_compra.cuarenta, "40", "Precio final con el 40 %",40);
+        resultadoCuotas.innerHTML += tarjetaDebito(costos_compra.cincuenta, "50", "Precio final con el 50 %",50);
 
 
     }
