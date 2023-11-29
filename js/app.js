@@ -14,6 +14,7 @@ const montoFinal_ahora = {
     cuotas12 : 2.25581
 }
 const montoFinal_naranja = {
+    naranja2 : 1.468214,
     naranja3 : 1.617862,
     naranja6 : 2.192982
 }
@@ -88,6 +89,8 @@ form.addEventListener("click", (e) =>{
         btnBorrar.style.display = "block";
         resultadoCuotas.innerHTML = "";
         resultadoCuotas.innerHTML += crearTitulo("Naranja");
+        resultadoCuotas.innerHTML += tarjetaDebito(montoFinal_ahora.cuotas1, "1", "Precio final 1 Cuota")
+        resultadoCuotas.innerHTML += tarjetaCuotas(montoFinal_naranja.naranja2, 2);
         resultadoCuotas.innerHTML += tarjetaCuotas(montoFinal_naranja.naranja3, 3);
         resultadoCuotas.innerHTML += tarjetaCuotas(montoFinal_naranja.naranja6, 6);
         
