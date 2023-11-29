@@ -20,6 +20,13 @@
     text-align: center;
 }
 
+.cardCuota_porcentaje{
+    font-size: 25px;
+    font-weight: bold;
+    color: #0C46A1;
+    text-align: center;
+}
+
 .cardCuota__contenedorMontos{
     text-align: center;
      margin-top: 10px;
